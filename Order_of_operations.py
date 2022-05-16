@@ -1,6 +1,6 @@
 from cgitb import text
 
-
+# Checks if the string input is a number
 def isFloat(text):
     try:   
          float(text)
@@ -8,13 +8,16 @@ def isFloat(text):
     except:
         return False
 
+
 def orderOfOperations(text):
     equation = []
-    
+
+    #pulls only the number into the equation list
     for item in text.split(' '):
         if isFloat(item):
             equation.append(item)
 
+    #checks for operators, does addition or subtraction 
     for item in text.split(' '):
             if item == '+' or item == '-':
                 num1 = int(equation[0])
