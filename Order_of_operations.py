@@ -20,9 +20,9 @@ def orderOfOperations(text):
     #checks for operators, does addition or subtraction 
     for item in text.split(' '):
             if item == '+' or item == '-':
-                num1 = int(equation[0])
+                num1 = float(equation[0])
                 del equation[0]
-                num2 = int(equation[0])
+                num2 = float(equation[0])
                 del equation[0]
                 if item == '+':
                     sum = num1 + num2
