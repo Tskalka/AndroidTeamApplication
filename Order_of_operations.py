@@ -16,10 +16,10 @@ def orderOfOperations(text):
             equation.append(item)
 
     for item in text.split(' '):
-            if item == '+' or item == '-':
-                num1 = int(equation[0])
+            if item == '+' or item == '-' or item == '*' or item == '/':
+                num1 = float(equation[0])
                 del equation[0]
-                num2 = int(equation[0])
+                num2 = float(equation[0])
                 del equation[0]
                 if item == '+':
                     sum = num1 + num2
@@ -29,10 +29,10 @@ def orderOfOperations(text):
                     sum = num1 - num2
                     equation = [sum] + equation                    
                     print(sum)
-    
+            print(equation)
     if len(equation) != 1:
         print("Error, Invalid input")
 
     print(equation)
 
-orderOfOperations('10 + 2 + 3 - 6')
+orderOfOperations('10.2 + 2.7 + 3.5 - 6.3')
