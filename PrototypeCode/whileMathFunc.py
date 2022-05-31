@@ -17,14 +17,34 @@ def doMath(oper, equation):
     del equation[myIndex - 1]
     equation[myIndex - 1] = result
     print(equation)
+    return equation
 
+def runEquation(equation):
+    operators = ['^','*','/','+','-']
+    for oper in operators:
+     while oper in equation:
+        newEquation = doMath(oper, equation)
+    #print(newEquation)
+    return newEquation
 
 equation = []
-operators = ['^','*','/','+','-']
-text = "(5 + 3)* 2 - 4 * 6"
+
+text = "( 5 + 3 ) + ( 2 - 5 * 3 ^ 2 )"
 for item in text.split(' '):
     equation.append(item)
 
-for oper in operators:
-    while oper in equation:
-        doMath(oper, equation)
+while len(equation) > 1:
+    if '(' not in equation:
+        print(runEquation(equation))
+    else:
+        myIndex = equation.index('(')
+        subEquation = []
+        count = 1
+        while equation[myIndex + count] != ')':
+            subEquation.append(equation[myIndex + count])
+            count += 1
+        innerMath = runEquation(subEquation)
+        for i in range(count):
+            del equation[myIndex]
+        equation[myIndex] = innerMath[0]
+        
