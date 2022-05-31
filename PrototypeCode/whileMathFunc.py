@@ -6,7 +6,7 @@ ops = {
     '*' : operator.mul,
     '/' : operator.truediv,  # use operator.div for Python 2
     '%' : operator.mod,
-    '^' : operator.xor,
+    '^' : operator.pow,
 }
 
 def doMath(oper, equation):
@@ -20,8 +20,8 @@ def doMath(oper, equation):
 
 
 equation = []
-operators = ['*','/','+','-']
-text = "5 + 3 * 2 - 4 * 6"
+operators = ['^','*','/','+','-']
+text = "(5 + 3)* 2 - 4 * 6"
 for item in text.split(' '):
     equation.append(item)
 
