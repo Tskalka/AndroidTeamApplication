@@ -1,5 +1,8 @@
 plus = lambda a,b : a + b
 
-ops = {'+' : plus }
+ops1 = {'+' : plus }
 
-print(ops['+'](5,7))
+ops2 = {'+' : (lambda a,b : a + b) }
+
+print(ops1['+'](5,7))
+print(ops2['+'](5,7))
