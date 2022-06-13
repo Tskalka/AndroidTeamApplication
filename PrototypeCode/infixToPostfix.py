@@ -49,3 +49,6 @@ expression = input('Enter infix expression ')
 print('infix notation: ',expression)
 
 print('postfix notation: ',infixToPostfix(expression))
+
+#From 
+# https://favtutor.com/blogs/infix-to-postfix-conversion#:~:text=Using%20the%20stack%20data%20structure,match%20the%20order%20of%20operation.
