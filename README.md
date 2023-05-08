@@ -1,2 +1,2 @@
 # AndroidTeamApplication
-This is a prototyping for our andriod application in Python.
+This is a prototyping for our android application in Python.
